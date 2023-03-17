@@ -76,3 +76,20 @@ Authorization: Bearer <token>
 1. 애플리케이션이나 client가 authorization을 authorization server에 요청한다. 
 2. authorization이 허용되면 authorization server는 access 토큰을 반환한다.
 3. application은 access token을 보안 리소스에 접근하는데 사용한다.
+
+## JWT의 장단점
+### JWT의 장점
+- DB 쿼리를 적게 사용할 수 있다.
+    - JWT가 많은 정보를 가지고 있으므로 User 테이블에서 데이터를 가져오는 것을 줄일 수 있다.
+- Token이 필요한 모든 정보를 포함할 수 있다.
+- 사용이 간편하다.
+- micro-service에 조금 더 적합하다.
+- 빠르다.
+- stateless한 서버를 만들 수 있다.
+    - 세션을 사용하지 않으므로 stateless한 서버를 구축할 수 있다.
+
+### JWT의 단점
+- API를 호출할 때 더 많은 payload를 포함한다.
+- 백엔드에서 클라이언트를 관리하기 힘들다.
+- secret key의 타협은 시스템의 타협을 낳을 수 있다.
+- server가 클라이언트를 구분할 수 없다.
