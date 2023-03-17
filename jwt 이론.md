@@ -46,7 +46,7 @@
 - 암호화된 header, payload, secret등을 위한 서명 부분이다.
 - 만약, HMAC SHA256알고리즘으로 암호화하면, signature은 다음과 같다.
 
-```json
+```java
 HMACSHA256(
 	base64UrlEncode(header) + "." +
 	base64UrlEncode(payload),
@@ -55,7 +55,7 @@ HMACSHA256(
 
 - signature는 메세지를 확인하기 위해 사용되며, 토큰이 private key로 서명된 경우, JWT를 보낸 사람을 확인하는데도 사용할 수 있다.
 
-![JWT]([https://cdn.auth0.com/content/jwt/encoded-jwt3.png](https://cdn.auth0.com/content/jwt/encoded-jwt3.png))
+![](https://cdn.auth0.com/content/jwt/encoded-jwt3.png)
 
 - 실제로 header, payload를 인코딩하여 secret으로 서명한 JWT이다.
 
@@ -71,7 +71,7 @@ Authorization: Bearer <token>
 - JWT 토큰을 HTTP 헤더로 보내는 경우, 너무 커지지 않도록 예방하는 것이 좋다. 몇몇 서버는 8KB가 넘지 않도록 하는 것도 있다.
 - 토큰이 Authorization 헤더로 보내지면, CORS(Cross-Origin Resource Sharing)은 쿠키를 사용하기 때문에 일어나지 않는다.
 
-![JWT Auth]([https://cdn2.auth0.com/docs/media/articles/api-auth/client-credentials-grant.png](https://cdn2.auth0.com/docs/media/articles/api-auth/client-credentials-grant.png))
+![](https://cdn2.auth0.com/docs/media/articles/api-auth/client-credentials-grant.png)
 
 1. 애플리케이션이나 client가 authorization을 authorization server에 요청한다. 
 2. authorization이 허용되면 authorization server는 access 토큰을 반환한다.
